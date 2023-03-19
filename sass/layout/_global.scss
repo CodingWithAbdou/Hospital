@@ -1,0 +1,67 @@
+@use "../helpers/varibles" as *;
+@use "../helpers/mixins" as *;
+
+:root {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  color: $dark-color;
+  background-color: rgba($primary-color-variant, 0.1);
+  user-select: none;
+}
+img {
+  width: 100%;
+}
+@for $i from 1 through 5 {
+  h#{$i} {
+    line-height: 1.2;
+  }
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  & > h2 {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 1rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: calc(100% - 60px);
+      height: 0.2rem;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(
+        90deg,
+        $primary-color,
+        $second-color,
+        $primary-color-variant
+      );
+      border-radius: 1rem;
+    }
+  }
+  & > p {
+    text-align: center;
+    margin: 0.6rem auto 2.5rem;
+    width: $container-md;
+    @media (min-width: 600px) {
+      width: 55%;
+    }
+    @media (min-width: 1024px) {
+      width: 40%;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use "../helpers/varibles" as *;
+@use "../helpers/mixins" as *;
+
+#services {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.7rem;
+    article {
+      display: flex;
+      gap: 1rem;
+      @include linearGradient;
+      border-radius: 1rem;
+      padding: 1.6rem;
+      height: fit-content;
+      transition: margin 0.4s ease;
+      .icon i {
+        font-size: 1.7rem;
+      }
+      h4 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 0.9rem;
+        padding-top: 0.8rem;
+        color: $light-color;
+      }
+      &:hover {
+        margin-top: -0.5rem;
+      }
+    }
+  }
+}

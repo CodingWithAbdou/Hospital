@@ -1,0 +1,45 @@
+@use "../helpers/varibles" as *;
+@use "../helpers/mixins" as *;
+
+.swiper {
+  width: $container-lg;
+  .swiper-wrapper {
+    padding: 3rem 0;
+    .swiper-slide {
+      @include linearGradient;
+      padding: 1rem;
+      border-radius: 1rem;
+      cursor: default;
+      q {
+        display: block;
+        padding-bottom: 1rem;
+        color: $light-color;
+      }
+      .testimonials_information {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .text {
+          h5 {
+            margin-bottom: 0.5rem;
+            font: {
+              size: 1.1rem;
+              weight: 500;
+            }
+          }
+          p {
+            color: $light-color;
+          }
+        }
+        img {
+          width: 3rem;
+          aspect-ratio: 1 / 1;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .swiper-pagination-bullet {
+    background-color: $second-color;
+  }
+}

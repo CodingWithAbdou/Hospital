@@ -1,0 +1,8 @@
+@use "../helpers/varibles" as *;
+
+.container {
+  width: $container-md;
+  @media (min-width: 1024px) {
+    width: $container-lg;
+  }
+}

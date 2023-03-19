@@ -1,0 +1,65 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/varibles" as *;
+header {
+  @include linearGradient();
+  display: grid;
+  place-items: center;
+  padding-top: 5rem;
+  min-height: 100vh;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8%;
+    @media (min-width: 778px) {
+      flex-direction: row;
+    }
+    .info {
+      text-align: center;
+      padding: 3rem 0 1rem;
+      width: 80%;
+      @media (min-width: 778px) {
+        text-align: start;
+        padding: 0;
+        width: 46%;
+      }
+      h1 {
+        letter-spacing: -1.5px;
+        @media (min-width: 778px) {
+          font: {
+            size: 2rem;
+            weight: 300;
+          }
+        }
+        @media (min-width: 992px) {
+          font: {
+            size: 2.5rem;
+            weight: 500;
+          }
+        }
+        font-size: 1.6rem;
+      }
+      p {
+        color: $light-color;
+        margin: 1rem 0;
+        font-size: 0.8rem;
+        @media (min-width: 992px) {
+          font-size: 1rem;
+        }
+      }
+      a {
+        font-size: 0.8rem;
+        @media (min-width: 992px) {
+          font-size: 1rem;
+        }
+      }
+    }
+    .image {
+      width: 70%;
+      @media (min-width: 778px) {
+        width: 46%;
+      }
+    }
+  }
+}
